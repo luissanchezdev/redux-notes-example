@@ -1,38 +1,31 @@
 import React from 'react'
 import { createStore } from 'redux'
 import ReactDOM from 'react-dom/client'
-
-const noteReducer = (state = [], action) => {
-  if (action.type === 'NEW_NOTE') {
-    state.concat(action.data)
-    return state
-  }
-
-  return state
-}
+import noteReducer from './reducers/noteReducer'
 
 const store = createStore(noteReducer)
-
-store.dispatch({
-  type: 'NEW_NOTE',
-  data: {
-    content: 'the app state is in redux store',
-    important: true,
-    id: 1
-  }
-})
-
-store.dispatch({
-  type: 'NEW_NOTE',
-  data: {
-    content: 'state changes are made with actions',
-    important: false,
-    id: 2
-  }
-})
-
-const showStore = store.getState()
-console.log({ showStore })
+  
+  store.dispatch({
+    type: 'NEW_NOTE',
+    data: {
+      content: 'the app state is in redux store',
+      important: true,
+      id: 1
+    }
+  })
+  
+  store.dispatch({
+    type: 'NEW_NOTE',
+    data: {
+      content: 'state changes are made with actions',
+      important: false,
+      id: 2
+    }
+  })
+  
+  const showStore = store.getState()
+  console.log({ showStore })
+  
 
 const App = () => {
   return(
