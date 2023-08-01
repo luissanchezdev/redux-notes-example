@@ -1,5 +1,5 @@
-import noteReducer from './noteReducer'
-import deepFreeze from 'deep-freeze'
+const noteReducer = require('./noteReducer')
+const deepFreeze = require('deep-freeze')
 
 describe('noteReducer', () => {
   test('returns new state with action NEW_NOTE', () => {

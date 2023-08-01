@@ -1,4 +1,4 @@
-const noteReducer = (state = [], action) => {
+function noteReducer (state = [], action) {
     switch(action.type) {
       case 'NEW_NOTE':
         return state.concat(action.data)
@@ -18,4 +18,4 @@ const noteReducer = (state = [], action) => {
     }
   }
 
-export default noteReducer
+module.exports = noteReducer
